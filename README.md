@@ -7,6 +7,8 @@ It contains
 
 - Examples on how to automatically generate tables from csv using Csvsimple and pgfplotstable
 
+- Plot examples with pgfplot
+
 - CSV for test
 
 Tip: **Run the files on Overleaf.** 
