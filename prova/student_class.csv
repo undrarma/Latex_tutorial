@@ -1,0 +1,12 @@
+Course,Nation,Name,Surname,Sex,Age,Avg,EU Ranking,World Ranking
+BDMA,Italy,Andrea,Armani,m,24,15.4567,1,3
+BDMA,Denmark,John,Doe,m,24,13.2234,1,3
+BDMA,UK,Jane,Doe,f,21,16,1,3
+BDMA,Brazil,Joao,Do,m,28,15.565,1,3
+BDMA,Sweden,Jan,Dorst,m,30,18.3,1,3
+BDMA,Korea,Jae,Doo,m,23,15.3432,1,3
+CS,America,Jack,Black,m,45,10.34,100,129
+CS,America,Derrick,Rose,m,32,16.4332,100,129
+CS,Spain,Marcos,Gutierrez,m,19,14.432,100,129
+CS,Italy,Mara,Rossi,f,22,13.32,100,129
+CS,France,Edith,Berri,f,28,12.2234,100,129
