@@ -1,0 +1,36 @@
+\documentclass{article}
+
+\usepackage{booktabs} % For \toprule, \midrule and \bottomrule
+\usepackage{siunitx} % Formats the units and values
+\usepackage{pgfplotstable} % Generates table from .csv
+\usepackage{csvsimple}
+\usepackage{longtable}
+\usepackage{booktabs}
+
+% Setup siunitx:
+\sisetup{
+  round-mode          = places, % Rounds numbers
+  round-precision     = 2, % to 2 places
+}
+
+\begin{document}
+
+   % Amazing to have a first, fast look at the data into LaTex
+   \csvautobooklongtable{csv/students.csv}{} 
+
+   Second Table\\
+   
+   % It can also filter results while importing the .csv 
+   % There are different ways to select the column, in this case
+   % I used the roman index
+   \csvautobooklongtable[filter = \equal{\csvcoliii}{Andrea} \and  \equal{\csvcolii}{Italy}]{csv/students.csv}
+
+    Third Table\\
+    \begin{center}
+    \csvreader[longtable = llllSl, table head= Last Name & Name & Country & Course & Average & Sex \\\hline\hline, table foot = \\\hline, filter = \equal{\name}{Andrea} \and  \equal{\country}{Italy} \or \equal{\course}{CS} ]%
+    {csv/students.csv}{1=\course,2=\country,3=\name,4 = \lastname, 5 = \sex, 7 = \avg}%
+    { \lastname & \name & \country & \course & \avg & \sex }%
+    \end{center}
+
+
+\end{document}
