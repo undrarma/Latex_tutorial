@@ -9,4 +9,4 @@ It contains
 
 - CSV for test
 
-The files should be compiled into Overleaf. 
+Tip: **Run the files on Overleaf.** 
