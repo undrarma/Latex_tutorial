@@ -1,0 +1,77 @@
+\documentclass{article}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+%\usepackage{algorithmic}
+
+\title{Algorithm Template}
+\author{Andrea Armani}
+
+
+\begin{document}
+\maketitle
+    \begin{algorithm}
+    \caption{Very long Algo}
+    \begin{algorithmic}[1]
+    \Function {Example Code}{attr list}
+        \If {condition1}
+            \State Do something
+            \If {condition3}
+                \State Do a lot
+            \EndIf
+        \ElsIf{condition4}
+                \State Do otherwise
+                \For{condition4}
+                    \Comment{comment in Algorithmic}
+                    \State which
+               		\State is
+               		\State very
+               		\State long
+               		\State and
+               		\State that
+               		\State surely
+               		\State can
+               		\State not
+               		\State fit
+               		\State inside
+               		\State the
+               		\State page
+               \EndFor
+            \Else
+                \State Do the rest
+                \While{condition5}
+                    \State Do
+                    \State Something
+               	\EndWhile
+    \algstore{hello}
+    \end{algorithmic}
+    \end{algorithm}
+    \bigbreak
+The syntax of Algorithmic is a little more complicated than Algorithm2e\\
+However it's useful to deal with split algorithms\\
+Algorithmic save the indentation and the open environments of the algorithm and it saves them using algstore{ <var name> }\\
+After a new algorithm environment is opened, to continue the previous algorithm is as simple as invoke algrestore{ <var name> }
+
+    \begin{algorithm}[h]
+    \caption{Very long Algo}
+    \begin{algorithmic}[1]
+    \algrestore{hello}
+            \State Do
+            \State Something
+            \State which
+       		\State is
+       		\State very
+       		\State long
+       		\State and
+       		\State that
+       		\State surely
+       		\State can
+       		\State not
+       		\State fit
+       		\State inside
+       		\State the
+       		\State page  
+   	    \EndIf
+    \EndFunction
+        \end{algorithmic}
+    \end{algorithm}
+\end{document}
