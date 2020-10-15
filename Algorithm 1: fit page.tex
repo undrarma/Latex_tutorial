@@ -1,0 +1,62 @@
+\documentclass{article}
+\usepackage{xcolor}
+\usepackage[linesnumbered,ruled,vlined]{algorithm2e}
+
+\title{Algorithm Template}
+\author{Andrea Armani}
+
+% Coloring the comment as blue
+\newcommand\mycommfont[1]{\footnotesize\ttfamily\textcolor{blue}{#1}}
+\SetCommentSty{mycommfont}
+
+% In case the algorithm is not so big it's possible to use algorithm2e
+% In the following alg I introduced all the most common instructions
+
+
+\begin{document}
+\maketitle
+
+\begin{algorithm}[H]
+\caption{Small Algo}
+
+   % How to set a function name  
+   \SetKwFunction{FMain}{Main}
+   \SetKwProg{Fn}{Function}{:}{}
+   
+   % How to write the body of the function
+   \Fn{\FMain{$f$, $a$, $b$, $\varepsilon$}}{
+        \DontPrintSemicolon
+        $\sum_{i=1}^{\infty} := 0$ \tcp*{this is a comment}
+        \tcc{Now this is an if...else conditional loop\;
+        and you can add it in different lines}
+        \If{Condition 1}
+        {
+            Do something    \tcp*{this is another comment}
+            \If{sub-Condition}
+                {Do a lot}
+        }
+        \ElseIf{Condition 2}
+        {
+    	    Do Otherwise \;
+            \tcc{Now this is a for loop}
+            \For{sequence}    
+            { 
+        	    loop instructions
+            }
+        }
+        \Else
+        {
+    	    Do the rest
+        }
+        
+        \tcc{Now this is a While loop}
+        \While{Condition}
+        {
+       		Do something\;
+        }
+        \Return a result
+    
+    }
+\end{algorithm}
+
+\end{document}
