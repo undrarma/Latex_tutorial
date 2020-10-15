@@ -9,6 +9,6 @@ It contains
 
 - Plot examples with pgfplot
 
-- CSV for test
+- CSV for test (In order to use them, import them in Overleaf in a folder called csv)
 
 Tip: **Run the files on Overleaf.** 
