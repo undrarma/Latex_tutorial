@@ -1,0 +1,65 @@
+\documentclass{article}
+
+\usepackage{booktabs} % For \toprule, \midrule and \bottomrule
+\usepackage{pgfplotstable} % Generates table from .csv
+\usepackage{longtable}
+
+
+% Function to discard values during import
+\makeatletter
+\pgfplotstableset{
+    discard if not/.style 2 args={
+        row predicate/.code={
+            \def\pgfplotstable@loc@TMPd{\pgfplotstablegetelem{##1}{#1}\of}
+            \expandafter\pgfplotstable@loc@TMPd\pgfplotstablename
+            \edef\tempa{\pgfplotsretval}
+            \edef\tempb{#2}
+            \ifx\tempa\tempb
+            \else
+                \pgfplotstableuserowfalse
+            \fi
+        }
+    }
+}
+\makeatother
+
+\begin{document}
+
+    % What kind of table to plot
+    \pgfplotstableset{
+      begin table=\begin{longtable},
+      end table=\end{longtable},
+    }
+    
+    % How to organize such table
+    \pgfplotstabletypeset[
+        col sep = comma,
+        % What columns need to be imported 
+        columns = {Course,Name,Surname,Avg},
+        columns/Course/.style={
+          column type = {l},
+          string type,
+          column name = Course},
+        columns/Name/.style={
+          column type = {l},
+          string type,
+          column name = Name},
+        columns/Surname/.style={
+          column type = {l},
+          string type,
+          column name = Last Name},
+        columns/Avg/.style={
+          column type = {l},
+          string type,
+          column name = Last Name},
+        % Specify how to better format the table
+        % Add the caption
+        % Add the black lines
+        every head row/.append style={before row={\caption{Some caption}\label{tab:sometable}\\\toprule},after row=\midrule\endfirsthead},
+        every first row/.append style={before row={\caption[]{Some caption}\\\toprule},after row=\endhead},
+        every last row/.style={after row=\bottomrule},
+        % call to a function      
+        % discard if not={Surname}{Armani},
+    ]{csv/students.csv} % filename/path to file
+
+\end{document}
